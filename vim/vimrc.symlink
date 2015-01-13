@@ -13,7 +13,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -86,8 +86,8 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 " Backups and swap files
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+set backupdir=~/.dotfiles/vim/backup
+set directory=~/.dotfiles/vim/tmp
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup
 
@@ -238,10 +238,10 @@ set wildignore+=*/node_modules/*
 
 " if has("gui_macvim")
 if has("gui_running")
-	source ~/.vim/mvimrc
+	source ~/.dotfiles/vim/mvimrc
 endif
 
 let g:rspec_command = "!bundle exec rspec --drb {spec}"
-source ~/.vim/shortcuts
+source ~/.dotfiles/vim/shortcuts
 
 
