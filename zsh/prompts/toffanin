@@ -1,0 +1,40 @@
+# -----------------------------------------------------------------------------
+# Toffanin's dotfiles
+#
+# repo: http://github.com/toffanin/dotfiles
+# file: ~/zsh/functions/Prompts/toffanin
+# -----------------------------------------------------------------------------
+
+# Toffanin prompt theme
+
+prompt_toffanin_help () {
+	cat <<'EOF'
+This prompt is color-scheme-able.  You can invoke it thus:
+
+	prompt toffanin [<promptcolor> [<usercolor> [<rootcolor>]]]
+
+EOF
+}
+
+prompt_toffanin_setup () {
+	prompt_toffanin_prompt=${1:-'blue'}
+	prompt_toffanin_user=${2:-'green'}
+	prompt_toffanin_root=${3:-'red'}
+
+	if [ "$USER" = 'root' ]
+	then
+		base_prompt="%B%F{$prompt_toffanin_root}%m%k "
+	else
+		base_prompt="%B%F{$prompt_toffanin_user}%n@%m%k "
+	fi
+	post_prompt="%b%f%k"
+
+	#setopt noxtrace localoptions
+
+	path_prompt="%B%F{$prompt_toffanin_prompt}%1~"
+	PS1="$base_prompt$path_prompt %# $post_prompt"
+	PS2="$base_prompt$path_prompt %_> $post_prompt"
+	PS3="$base_prompt$path_prompt ?# $post_prompt"
+}
+
+prompt_toffanin_setup "$@"

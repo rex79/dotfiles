@@ -1,0 +1,533 @@
+cat .zshrc
+sudo /opt/local/apache2/bin/apachectl restart
+sudo /opt/local/apache2/bin/apachectl restart
+sudo /opt/local/apache2/bin/apachectl restart
+port update
+port selfupdate
+port outdated
+port install php5 +pear
+cd tmp
+ls
+port info php-apc
+port info php5-apc
+port install php5-apc
+port install
+mv Portfile.txt portfile
+port install
+ls
+cat portfile
+port install
+port installed php5-apc
+sudo /opt/local/apache2/bin/apachectl restart
+diskutil list
+diskutil eject /dev/disk1
+cd Sites/voxhumanitatis/sites/all/themes/te
+git pull
+cd ../voxhumanitatis
+git pull
+cat .zshrc
+nano .zshrc
+cd Sites/bbveronese
+zf create module percorsi
+ssh 192.168.1.6
+exit
+ssh 192.168.1.8
+ssh 192.168.1.5
+ssh 192.168.1.9
+ssh 192.168.1.10
+ssh 192.168.1.4
+ssh 192.168.1.3
+ssh 192.168.1.11
+ping 192.168.1.3
+ping 192.168.1.4
+ping 192.168.1.5
+ping 192.168.1.7
+ssh 192.168.1.7
+ssh 192.168.1.7
+cd
+cd Documents/libraries
+ls
+git clone https://github.com/deplorableword/textmate-solarized.git
+cd textmate-solarized
+ls
+cp Solarized\ \(* ~/Library/Application\ Support/TextMate/Themes/
+cd
+diskutil list
+diskutil eject /dev/disk1
+diskutil list
+diskutil eject /dev/disk2
+cd Downloads/FullInstall
+ls
+cat dvt_check
+mvim dvt_check
+telnet 192.168.1.14
+telnet 192.168.1.14
+diskutil list
+diskutil eject /dev/disk2
+cd tmp
+ls
+hdiutil convert -format UDWR -o generic_x86.img generic_x86.iso
+hdiutil convert -format UDRW -o generic_x86.img generic_x86.iso
+mv generic_x86.img.dmg generic_x86.img
+diskutil list
+dd if=generic_x86.img of=/dev/disk2 bs=1m
+sudo dd if=generic_x86.img of=/dev/disk2 bs=1m
+diskutil list
+diskutil umountDisk /dev/disk2
+diskutil list
+sudo dd if=generic_x86.img of=/dev/disk2 bs=1m
+diskutil eject /dev/disk2
+diskutil eject /dev/disk2
+cd Documents
+cd pro
+cd projects
+ls
+ls ../programmazione
+rsync -avz 192.168.1.7:~/android_x86 .
+ssh 192.168.1.7
+rsync -avz --progress 192.168.1.7:~/android_x86 .
+diskutil list
+diskutil eject /dev/disk2
+cd android_x86
+make -j3 usb_img TARGET_PRODUCT=generic_x86
+ssh 192.168.1.7
+cd Downloads
+hdiutil convert -format UDRW -o ubuntu-11.04-desktop-i386.img ubuntu-11.04-desktop-i386.iso
+diskutil list
+diskutil umount /dev/disk3
+dd if=ubuntu-11.04-desktop-i386.img.dmg of=/dev/disk3
+ls
+ls build
+ls -l build
+chmod +x build/envsetup.sh
+build/envsetup.sh
+bash
+diskutil eject /dev/disk3
+diskutil list
+dd if=ubuntu-11.04-desktop-i386.img.dmg of=/dev/rdisk2 bs=1m
+diskutil eject /dev/disk2
+cd
+cd Documents/libraries
+git clone https://github.com/lukhnos/objectiveflickr.git
+rm -rg objectiveflickr
+rm -rf objectiveflickr
+git clone https://github.com/lukhnos/objectiveflickr.git
+rm -rf objectiveflickr
+git clone https://github.com/lukhnos/objectiveflickr.git
+rm -rf objectiveflickr
+git clone https://github.com/lukhnos/objectiveflickr.git
+rm -rf objectiveflickr
+ls -a
+git clone https://github.com/lukhnos/objectiveflickr.git
+cd objectiveflickr
+open ObjectiveFlickr.xcodeproj
+build/envsetup.sh 
+lunch generic_x86-eng
+repo sync
+lunch generic_x86-eng
+cat build/envsetup.sh 
+build/envsetup.sh 
+lunch generic_x86-eng
+diskutil eject /dev/disk2
+cat build/envsetup.sh 
+sudo diskutil list
+diskutil eject /dev/disk3
+cd Sites/rode
+zf create module recensioni
+port -f uninstall TOra
+port echo leaves
+port uninstall leves
+port uninstall leaves
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
+tail -f /opt/local/apache2/logs/error_log
+zf create module eventi
+diskutil list
+diskutil eject /dev/disk1
+cd Documents/workspace
+ls
+ls -a
+rm -rf .metadata
+sudo rm -rf .metadata
+ls
+ls bin
+cd Documents/pro
+cd Documents/libraries
+ls
+mkdir android
+cd android
+repo init -u git://android.git.kernel.org/platform/manifest.git
+repo init -u git://android.git.kernel.org/platform/manifest.git -b gingerbread
+repo sync
+sudo emacs /opt/local/apache2/conf/httpd.conf
+cat /etc/hosts
+sudo emacs /opt/local/apache2/conf/extra/httpd-vhosts.conf
+cd /opt/local/apache2/htdocs
+ls
+cp ~/Documents/workspace/HelloWorldAndroid/bin/HelloWorldAndroid.apk .
+sudo cp ~/Documents/workspace/HelloWorldAndroid/bin/HelloWorldAndroid.apk .
+ifconfig
+ls
+ls -l
+sudo chmod 777 HelloWorldAndroid.apk
+ls -l
+cd
+cd android-sdk/platform-tools
+ls
+./adb devices
+cd
+cd Sites/voxhumanitatis/sites/all/themes/voxhumanitatis
+git status
+less templates/html.tpl.php
+git diff templates/html.tpl.php
+git diff templates/html.tpl.php >>| ~/Descktop/diff.txt
+git diff templates/html.tpl.php >>| '~/Descktop/diff.txt'
+git diff templates/html.tpl.php >| '~/Descktop/diff.txt'
+ls ~/Desktop
+git diff templates/html.tpl.php >| diff.txt
+mv diff.txt ~/Desktop
+diskutil list
+diskutil eject /dev/disk1
+bash
+source build/envsetup.sh 
+exit
+cd
+chsh
+port -d install macvim
+git clone <div id="dialog" title="Errori nella form" style="display:none;">|
+<p>|
+        <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;">|</span>
+        <?php print_r($this->|form->|printErrorMsges())?>
+</p>|
+</div>|
+<script type="text/javascript">|
+<?php if($this->|form->|printErrorMsges()) {?>
+$(function() {\
+        $("#dialog").dialog({\
+            bgiframe: true,\
+            modal: true,\
+            width: 450,\
+            buttons: {\
+                Ok: function() {\
+                    $(this).dialog('close');\
+                }\
+            }\
+        });\
+    });
+<?}?>|
+</script>|
+clear
+git clone git://github.com/carlhuda/janus.git ~/.vim
+rm -fr .vim/
+git clone git://github.com/carlhuda/janus.git ~/.vim
+cd .vim
+rake
+sudo rake
+cd ../Sites/rode
+mvim .
+env
+nano ~/.zshrc
+cd Sites/rode
+mvim .
+cat ~/.vimrc.local
+mvim ~/.vim/vimrc
+port variants macvim
+port install macvim +ruby +big
+mvim ~/.vim/vimrc
+mvim .
+cd ../planet
+mvim .
+mv ~/Desktop/sitemap.xml .
+cd ../benvenuti
+mvim .
+mvim .
+mvim ../rode/
+mvim .
+mvim .
+mvim ../rode/
+cd Downloads/nathansmith-960-Grid-System-64e46a1
+ls -a
+cd
+cd Documents/libraries
+ls
+cd 960-Grid-System
+ls
+ls -a
+git pull
+cd
+cd tmp
+hdiutil convert system.img -format UDTO system.iso
+hdiutil convert -format UDTO system.img system.iso
+hdiutil convert -format UDTO -o system.iso system.img
+cd Documents/projects/android_x86
+ls
+source build/envsetup.sh
+bash
+source build/envsetup.sh 
+lunch
+cd /Developer/SDKs/
+ls
+sudo ln -sf MacOSX10.5.sdk MacOSX10.6.sdk/
+ls -l
+ls -l
+man ln
+sudo ln -sf MacOSX10.6.sdk MacOSX10.5.sdk
+ls -l
+cd
+cd Documents/projects/android_x86/
+ls
+lunch
+make -j3
+cd /opt/local/
+ls
+which zf
+ls /opt/local/bin/
+mvim /opt/local/bin/zf.sh 
+LS
+ls
+ls include/
+cd
+cd Documents/projects/android_x86/
+repo sync
+cd Documents/projects
+ls
+cd android_x86
+ls
+bash
+source build/envsetup.sh 
+lunch
+make iso_img TARGET=generic_x86
+repos sync
+repo sync
+make iso_img TARGET=generic_x86
+cd
+exit
+cd
+cd Movies/Nokia
+ls
+ls -l
+ls -a
+ssh 192.168.1.7
+cd
+cd Documents/projects
+ls
+rsync -avz android_x86 192.168.1.7:~/
+cd android_x86
+repo sync
+make iso_img TARGET_PRODUCT=generic_x86
+cd Documents/projects/android_x86
+make clean
+ssh 192.168.1.7
+port search distcc
+port show distcc
+port variants distcc
+port dependencies distcc
+port install distcc
+which gcc
+gcc --version
+diskutil list
+diskutil eject /dev/disk1
+cd Sites/benvenuti
+zf create module attivita
+ls -a
+ls -l public/var
+ls -l public/var/files
+tail -f /opt/local/apache2/logs/error_log
+tail -f /opt/local/apache2/logs/error_log
+emacs public/.htaccess
+cat Sites/planet/.htaccess
+emacs public/.htaccess
+diskutil list
+cd ../piscine
+chmod -R 777 public/var
+cd Sites
+mv bbveronese bbsantostefano
+sudo emacs /opt/local/apache2/conf/extra/httpd-vhosts.conf
+sudo emacs /etc/hosts
+sudo /opt/local/apache2/bin/apachectl restart
+tail -f /opt/local/apache2/logs/error_log
+sudo emacs /opt/local/etc/php5/php.ini
+sudo /opt/local/apache2/bin/apachectl restart
+sudo emacs /opt/local/etc/php5/php.ini
+ls /
+du -sh *
+du -sh /
+sudo du -sh /
+sudo du -sh /
+sudo du -sh /*
+tail -f /opt/local/apache2/logs/error_log
+diskutil eject /dev/disk1
+diskutil eject /dev/disk2
+diskutil list
+diskutil eject /dev/disk1
+diskutil list
+diskutil eject /dev/disk1
+diskutil eject /dev/disk1
+diskutil eject /dev/disk1
+cd Documents/sou
+cd Documents/pro
+cd Documents/projects
+sl
+ls
+cd ../libraries
+ls
+cd ../
+ls
+rm -rf Aptana\ *
+cd Documents/projects
+ls
+hg
+hg clone http://hg.openjdk.java.net/macosx-port/macosx-port
+cd macosx-port
+chmod 755 get_source.sh
+./get_source.sh
+make ALLOW_DOWNLOADS=true SA_APPLE_BOOT_JAVA=true ALWAYS_PASS_TEST_GAMMA=true ALT_BOOTDIR=`/usr/libexec/java_home -v 1.6` HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
+/Developer/Platforms/iPhoneOS.platform/DeviceSupport/4.2/Symbols/System/Library/AccessibilityBundles/AppStore.axbundle/AppStore ; exit;
+diskutil eject /dev/disk1
+ls Sitex
+ls Sitex/voxhumanitatis
+rm -rf Sitex
+cd Sites
+mkdir pFlickr
+cd pFlickr
+mate .
+cat .zshrc
+cat .profile
+cat .bashrc
+ls /opt/local/lib/php
+ls /opt/local/lib/php/extensions
+grep Zend /opt/local/etc/php5/php.ini
+less Sites/avvmasi/.htaccess
+cd Sites/voxhumanitatis/sites/all/themes
+ls
+cd voxhumanitatis
+ls
+git status
+git add js/
+git status
+git commit -am "add the hover effect on the main menu. Add a javascript file with all the scripts for jquery"
+git pull
+git push
+cd ../te
+git pull
+cd ../voxhumanitatis
+git pull
+git status
+diskutil list
+cd Sites/voxhumanitatis/sites/all/themes/voxhumanitatis
+git status
+git commit -am "fixing drowp down menu"
+git push
+git --version
+git status
+git status
+git push
+cd ../
+mv voxhumanitatis voxhumanitatis_old
+git clone git@ineluttabile.it:/voxhumanitatis/
+git clone git@ineluttabile.it:/voxhumanitatis
+cd voxhumanitatis
+cp -r ../voxhumanitatis_old/* .
+git status
+git add js/
+git commit -am "fixing repository"
+git push
+git push
+cd
+cd tmp/p
+cd tmp
+curl http://www.cutler.it/themes/cutler/cutler/swf/approccio.swf >| approccio.swf
+ls
+cd Sites/voxhumanitatis/sites/all/themes/voxhumanitatis
+mate .
+git status
+git commit -am "Move the javascript code to html.tpl.php and fix the rounded corner on the main menu"
+git push
+diskutil eject /dev/disk1
+diskutil list
+diskutil eject /dev/disk1
+diskutil list
+diskutil eject /dev/disk2
+ssh root@discuspassion.net
+sudo mate /etc/hosts
+cd Sites/awgelettronica
+ls
+ls -l var
+chmod -R 777 var
+ls var/images
+cd
+ssh 192.168.1.9
+ssh 192.168.1.9
+nano .ssh/known_hosts
+ssh 192.168.1.9
+ssh 192.168.1.9
+ssh 192.168.1.3
+nano .ssh/known_hosts
+ssh 192.168.1.3
+sudo diskutil eject /dev/disk1
+diskutil list
+diskutil eject /dev/disk1
+mkdir openears
+cd openears
+mv ~/Downloads/openears/OpenEars.zip .
+unzip OpenEars.zip
+cd OpenEars/CMULibraries
+ls
+mv ~/Downloads/openears/sphinxbase-0.6.1.tar.tar.gz .
+mv ~/Downloads/openears/pocketsphinx-0.6.1.tar.tar.gz .
+mv ~/Downloads/openears/flite-1.4-* .
+tar xvzf sphinxbase-0.6.1.tar.tar.gz
+ls
+tar xvzf pocketsphinx-0.6.1.tar.tar.gz
+tar xvjf flite-1.4-*
+tar xvjf flite-1.4-WM-8KHzvoices.tar.tar.bz2
+tar xvjf flite-1.4-release.tar.tar.bz2
+ls
+ls -l
+./InstallOpenEars.pl
+cd ../OpenEarsSampleProject/
+ls
+open OpenEarsSampleProject.xcodeproj
+diskutil list
+diskutil eject /dev/disk1
+nano .ssh/known_hosts
+ssh root@192.168.1.3
+diskutil list
+diskutil eject /dev/disk1
+cd Sites
+ls
+cd eurven
+cat /etc/hosts
+mate .
+/opt/local/bin/mysql5 -u root Sql382328_1 < Sql382328_1.sql
+/opt/local/bin/mysql5 -u root -p Sql382328_1 < Sql382328_1.sql
+mate /etc/hosts
+mate /opt/local/apache2/conf/extra/httpd-vhosts.conf
+sudo /opt/local/apache2/bin/apachectl restart
+sudo mate /opt/local/etc/php5/php.ini
+sudo /opt/local/apache2/bin/apachectl restart
+ssh root@192.168.1.3
+diskutil list
+diskutil eject /dev/disk1
+diskutil eject /dev/disk1
+: 1309255359:0;cd Sites/bbsantostefano
+: 1309255368:0;ls -l public/var
+: 1309255382:0;ls -l public/var/files
+: 1309256931:0;tail -f /opt/local/apache2/logs/error_log
+: 1309257425:0;ls -l public/var/files/
+: 1309257433:0;ls -l public/var
+: 1309257456:0;chmod -R 777 public/var/*
+: 1309257460:0;sudo chmod -R 777 public/var/*
+: 1309257463:0;ls -l public/var
+: 1309257469:0;ls -l public/var/files
+: 1309257545:0;tail -f /opt/local/apache2/logs/error_log
+: 1309263603:0;tail -f /opt/local/apache2/logs/error_log
+: 1309263608:0;clear
+: 1309263610:0;tail -f /opt/local/apache2/logs/error_log
+: 1309267716:0;cd ~/Documents/libraries
+: 1309267730:0;git clone https://github.com/toffanin/dotfiles.git
+: 1309267747:0;cd dotfiles
+: 1309267748:0;ls
+: 1309267749:0;ls -a
+: 1309267780:0;cat ~/.zshrc
+: 1309267855:0;cp .zshrc ~/
+: 1309267869:0;cp -r .zsh ~/
