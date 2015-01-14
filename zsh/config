@@ -1,0 +1,233 @@
+for config_file (~/.zsh/lib/*) source $config_file
+
+# AUTOCOMPLETE
+autoload compinit
+compinit
+
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
+# HISTORY
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+setopt APPEND_HISTORY # Append History from multiple sessions
+setopt EXTENDED_HISTORY # add timestamps to history
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY # Don't execute History line directly, allow modification
+
+# VARIABLES
+
+REPORTTIME=10 # Show elapsed time a command took if it took longer than 10 seconds
+
+# Make CTRL-W delete after other chars, not just spaces
+WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
+
+# OPTIONS
+
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt COMPLETE_IN_WORD # Completion is done from both ends
+setopt LONG_LIST_JOBS
+
+# enable / disable ANSI colors;
+# possible values: {1,0}
+USE_COLORS=1
+
+# enable / disable information retrieval from Version Content Systems's
+# directories;
+# possible values: {1,0}
+USE_VCS_INFO=1
+
+# enable / disable advanced tab completion;
+# possible values: {1,0}
+USE_ADVANCED_TAB_COMPLETION=1
+
+# possible values: {1,0}
+USE_COMPLETION_LISTINGS=1
+
+# enable / disable auto-correction of the commands typed;
+# possible values: {1,0}
+USE_COMMAND_AUTOCORRECTION=1
+
+# enable / disable UNIX key bindings emulation;
+# possible values: {1,0}
+USE_KEY_BINDINGS=1
+
+
+# -----------------------------------------------------------------------------
+# Autoloads
+# -----------------------------------------------------------------------------
+
+# TODO: all paths defined by ZSH_* variables MUST be verified before to start all the autoload
+
+# load simplified color handling
+if [[ 1 = $USE_COLORS ]]; then
+    autoload colors
+    colors
+fi
+
+# load VCS Info
+if [[ 1 = $USE_VCS_INFO ]]; then
+    autoload -Uz vcs_info
+fi
+
+# load advanced Tab-completion
+[[ 1 = $USE_ADVANCED_TAB_COMPLETION ]] && . "${HOME}/.zsh/settings/completion"
+
+# load custom prompt
+if [[ -n $DEFINE_PROMPT ]]; then
+    autoload -U promptinit
+    promptinit
+    #. "${ZSH_PROMPTS}/${DEFINE_PROMPT}"
+    prompt adam1
+fi
+
+# load Completion Listings
+if [[ 1 = $USE_COMPLETION_LISTINGS ]]; then
+    autoload -U complist
+fi
+
+[[ 1 = $USE_KEY_BINDINGS ]] && . "${HOME}/.zsh/settings/keybindings"
+
+# provide "compose" function, aka digraphs
+autoload -Uz insert-composed-char && zle -N insert-composed-char
+
+# automatically remove duplicates from these arrays
+typeset -U path cdpath fpath manpath
+
+# -----------------------------------------------------------------------------
+# ZSH Settings
+# -----------------------------------------------------------------------------
+if [[ 1 = $USE_COMMAND_AUTOCORRECTION ]]; then
+    setopt correctall
+fi
+
+if [[ 1 = $USE_ADVANCED_TAB_COMPLETION ]]; then
+    zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+    zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+fi
+
+setopt autolist automenu    # set auto listing to menu style
+setopt notify               # immediately report the status of background
+                            # options
+setopt extended_glob        # enable extended globbing
+setopt prompt_subst         # enable prompt substitution
+setopt autopushd            # automatically append dirs to the
+                            # push/pop list
+
+
+# -----------------------------------------------------------------------------
+# Advanced History Setup
+# -----------------------------------------------------------------------------
+export REPORTTIM=10
+setopt hist_ignore_all_dups # ignore duplicates in history
+setopt hist_ignore_space    # don't remember lines starting with a ' '
+setopt hist_reduce_blanks   #
+setopt hist_ignore_dups     # ignore duplicates in history
+setopt hist_expire_dups_first  # when inserting into history, expire duplicates first
+setopt hist_find_no_dups       # when searching in the history, remove duplicates from results
+setopt share_history           # share history between zsh sessions
+setopt extended_history        # add timestamps to history
+setopt histverify              # when using ! cmds, confirm first
+
+# -----------------------------------------------------------------------------
+# ANSI Color Codes
+# -----------------------------------------------------------------------------
+#CLEAR=$reset_color
+#RED=$fg[red]
+#GREEN=$fg[green]
+#YELLOW=$fg[yellow]
+#BLUE=$fg[blue]
+#PURPLE=$fg[magenta]
+#CYAN=$fg[cyan]
+#GREY=$'\e[0;94m'
+
+# Set input mode to vi
+#set -o vi
+
+#
+# Set prompt style
+#
+#ACTION="%{$PURPLE%}:%a%{$CLEAR%}"
+
+#zstyle ':vcs_info:*:prompt:*' enable git
+#zstyle ':vcs_info:*:prompt:*' check-for-changes true
+#zstyle ':vcs_info:*:prompt:*' stagedstr "%{$YELLOW%}"
+#zstyle ':vcs_info:*:prompt:*' unstagedstr "%{$GREEN%}"
+#zstyle ':vcs_info:*:prompt:*' actionformats "(%{$BLUE%}%u%c%b${ACTION})%{$CLEAR%} "
+#zstyle ':vcs_info:*:prompt:*' formats "%{$BLUE%}%c%u(%c%b%c%u)%{$CLEAR%} "
+#zstyle ':vcs_info:*:prompt:*' nvcsformats ""
+
+
+function precmd {
+    local last=$?
+    local prompt=""
+
+    # Status
+    if [[ $last -eq 0 ]]; then
+        prompt=$GREEN
+    elif [[ $last -eq 1 ]]; then
+        prompt=$YELLOW
+    else
+        prompt=$RED
+    fi
+
+    cursor="%{$prompt%}%#%{$CLEAR%}"
+    vcs_info 'prompt'
+}
+
+
+function settitle {
+  case $TERM in
+    (screen)
+      # use for GNU/screen
+      print -nR $'\033k'$1$'\033'\\
+      print -nR $'\033]0;'$2$''\\
+      ;;
+    (xterm*)
+      # Use this one instead for xterms
+      print -Pn "\e]0;%n@%m: %~\a"
+      ;;
+  esac
+}
+
+
+# preexec function used by zsh is setting the title as well :)
+function preexec
+{
+    emulate -L zsh
+    local -a cmd; cmd=(${(z)1})
+    settitle $cmd[1]:t "$cmd[2,-1]"
+}
+
+#
+# Set Prompts
+#
+#PROMPT="%{$GREY%}%n%{$CLEAR%} %~ "'${vcs_info_msg_0_}${cursor}'" %{$CLEAR%}"
+#RPROMPT='%{$BLUE%}%w %T %M%{$CLEAR%}'
+
+#
+# ls colors
+#
+#LS_COLORS="'rs=0:di=01;36:ln=00;35:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:';"
+#ZLS_COLORS=$LS_COLORS
+#export LS_COLORS
+#export ZLS_COLORS
+
+#export PATH=/usr/local/share/python:/usr/local/bin:/Volumes/Users/rex/bin:/Volumes/Users/rex/.rbenv/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/Volumes/Users/rex/bin:/Volumes/Users/rex/.rbenv/bin:/usr/local/sbin:$PATH
+eval "$(rbenv init -)"
+
+HOMEBREW_MAKE_JOBS=6
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
+export GOPATH=/usr/local/Cellar/go/1.1.1/
+
