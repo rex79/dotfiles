@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-#plugins=(git cp go golang brew osx ruby sublime tmux)
+ZSH_THEME="eastwood"
+plugins=(git cp go golang brew osx ruby sublime tmux)
 source $ZSH/oh-my-zsh.sh
 
 # shortcut to this dotfiles path is $ZSH
