@@ -42,6 +42,11 @@ then
   export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 fi
 
+if [[ "$(uname -s)" = "Linux" ]]
+then
+  export GOPATH="$HOME/Lavoro/golang/"
+fi
+
 export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:$HOME/rex/bin:/usr/local/sbin:$EC2_HOME/bin:$PATH
 
 ### Added by the Heroku Toolbelt
