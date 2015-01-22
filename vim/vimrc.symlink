@@ -68,12 +68,8 @@ set t_Co=256
 set background=dark
 set term=screen-256color
 let base16colorspace=256        " Access colors present in 256 colorspace
-colorscheme base16-tomorrow
+colorscheme distinguished
 
-" Highlight the 80th column (works in Vim >= 7.3)
-if exists('+colorcolumn')
-  set colorcolumn=80
-endif
 
 " Bubble single lines
 nmap <C-Up> ddkP
@@ -167,7 +163,7 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-  \| exe "normal! g`\"" | endif
+      \| exe "normal! g`\"" | endif
 
 " automatically clear whitespaces owhen saving buffer
 au BufWritePre * :call s:clearWhitespaces()
@@ -200,7 +196,7 @@ map <Leader>brt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.
 
 " CtrlP
 map <Leader><leader> :CtrlP<CR>
-map <Leader>l :CtrlPBuffer<CR>
+map <Leader>n :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -271,6 +267,27 @@ let g:airline_paste_symbol = 'ρ'
 let g:airline_theme='lucius'
 
 if has("gui_running")
-  set guifont=Menlo\ bold:h14  " Font is Menlo
-  source ~/.mvimrc
+  set guifont=Ubuntu\ Mono:h10  " Font is Menlo
+  source ~/.gvimrc
 endif
+
+" save with leader+s
+noremap <Leader>s :update<CR>
+
+
+" fold tag
+map <Leader>ft Vatzf
+" remap ESC movement
+inoremap jj <ESC>
+
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" re-indent entire file
+map   <silent> <F5> mmgg=G'm
+imap  <silent> <F5> <Esc> mmgg=G'm
+vmap  <tab> =
+nmap  <tab> ==
+
+
