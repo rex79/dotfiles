@@ -4,6 +4,7 @@ ZSH_THEME="eastwood"
 plugins=(git cp go golang brew osx ruby sublime tmux)
 source $ZSH/oh-my-zsh.sh
 
+
 # shortcut to this dotfiles path is $ZSH
 export ALIAS=$HOME/.dotfiles
 
