@@ -234,7 +234,7 @@ map <C-\> :call RunNearestSpec()<CR>
 nmap <leader>s ysiw
 
 " select last paste in visual mode
-nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+" nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " The Silver Searcher
 if executable('ag')
@@ -272,8 +272,11 @@ if has("gui_running")
 endif
 
 " save with leader+s
-noremap <Leader>s :update<CR>
+" noremap <Leader>s :update<CR>
 
+
+" destroy current buffer
+map <Leader>w :bd<CR>
 
 " fold tag
 map <Leader>ft Vatzf
@@ -290,4 +293,7 @@ imap  <silent> <F5> <Esc> mmgg=G'm
 vmap  <tab> =
 nmap  <tab> ==
 
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
 
+au FileType go nmap <Leader>i <Plug>(go-info)
