@@ -14,8 +14,9 @@ alias gdev='git push origin develop'
 alias gpom='git push origin master'
 #alias gc='git commit -am'
 alias gpall='git push origin master && git push heroku master'
-alias gpl='git pull origin '
-alias gpu='git push origin '
+alias gpl='git pull  '
+alias gpu='git push '
+alias gremote='git remote -v'
 
 # mina deploy aliases
 alias mdep='mina deploy --verbose'
@@ -23,6 +24,11 @@ alias mdep='mina deploy --verbose'
 # Ruby
 alias r="rails"
 alias be="bundle exec"
+alias csd="cap staging deploy"
+alias csdrestart="cap staging deploy:restart"
+alias csdstart="cap stating deploy:appstart"
+alias csdstop="cap stating deploy:appstop"
+
 
 # Utilities
 alias reload='source ~/.zsh/aliases'
