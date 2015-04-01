@@ -29,6 +29,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'valloric/youcompleteme'
+Bundle 'mattn/emmet-vim'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'

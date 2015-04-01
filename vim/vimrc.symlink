@@ -68,7 +68,7 @@ set t_Co=256
 set background=dark
 set term=screen-256color
 let base16colorspace=256        " Access colors present in 256 colorspace
-colorscheme distinguished
+colorscheme github
 
 
 " Bubble single lines
@@ -267,12 +267,14 @@ let g:airline_paste_symbol = 'ρ'
 let g:airline_theme='lucius'
 
 if has("gui_running")
-  set guifont=Ubuntu\ Mono:h10  " Font is Menlo
-  source ~/.gvimrc
+  " set guifont=Ubuntu\ Mono:h10  " Font is Menlo
+  source ~/.mvimrc
 endif
 
 " save with leader+s
 " noremap <Leader>s :update<CR>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 
 " destroy current buffer
@@ -297,3 +299,9 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 
 au FileType go nmap <Leader>i <Plug>(go-info)
+
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
+
+

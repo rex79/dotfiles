@@ -30,7 +30,7 @@ alias ea='subl ~/.zsh/aliases && reload'
 alias tailf='tailf -f'
 
 # postgres, mariadb, mongo database
-alias pstart='pg_ctl -D /usr/local/var/postgres9.3 -l /usr/local/var/postgres9.3/server.log start'
+alias pstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
 alias tailf='tail -f'
 
