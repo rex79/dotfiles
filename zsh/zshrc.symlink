@@ -63,6 +63,11 @@ if [[ "$(hostname)" = "lenticchia" ]]
 then
   export GOPATH="/media/code/go-code/"
 fi
+if [[ "$(hostname)" = "grandepuffo" ]]
+then
+  export GOPATH="/media/1tb/Code/go-code"
+fi
+
 
 
 export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$EC2_HOME/bin:$PATH
