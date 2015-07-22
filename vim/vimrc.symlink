@@ -275,6 +275,10 @@ endif
 " noremap <Leader>s :update<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+" save with leader+s
+" noremap <Leader>s :update<CR>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 
 " destroy current buffer

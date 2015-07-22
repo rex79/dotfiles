@@ -46,6 +46,7 @@ Bundle 'slim-template/vim-slim'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'burnettk/vim-angular'
 
 " Themes
 Bundle 'chriskempson/base16-vim'
