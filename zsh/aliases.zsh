@@ -12,7 +12,7 @@ alias l="git log --oneline --decorate --graph"
 alias gmaster='git push origin master'
 alias gdev='git push origin develop'
 alias gpom='git push origin master'
-#alias gc='git commit -am'
+alias gcommit='git commit -am'
 alias gpall='git push origin master && git push heroku master'
 alias gpl='git pull  '
 alias gpu='git push '
@@ -28,10 +28,11 @@ alias csd="cap staging deploy"
 alias csdrestart="cap staging deploy:restart"
 alias csdstart="cap stating deploy:appstart"
 alias csdstop="cap stating deploy:appstop"
+alias pserver="padrino start -h 192.168.1.2"
 
 
 # Utilities
-alias reload='source ~/.zsh/aliases'
+alias reload='source ~/.dotfiles/zsh/aliases.zsh'
 alias ea='subl ~/.zsh/aliases && reload'
 alias tailf='tailf -f'
 
@@ -62,3 +63,7 @@ alias nginx.logs.error='tail -250f /usr/local/var/log/nginx/error.log'
 alias nginx.logs.access='tail -250f /usr/local/var/log/nginx/access.log'
 alias mongostart="launchctl start org.mongodb.mongod"
 alias mongostop="launchctl stop org.mongodb.mongod"
+
+
+# heroku utlility
+alias hlog="heroku logs -t "
