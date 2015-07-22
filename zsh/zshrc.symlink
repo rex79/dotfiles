@@ -61,7 +61,7 @@ fi
 
 if [[ "$(hostname)" = "lenticchia" ]]
 then
-  export GOPATH="/media/code/go-code/"
+  export GOPATH="/Volumes/Dati/Lavoro/gocode/"
 fi
 if [[ "$(hostname)" = "grandepuffo" ]]
 then

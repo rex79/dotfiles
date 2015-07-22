@@ -6,7 +6,7 @@ highlight NonText guifg=#dddddd
 highlight SpecialKey guifg=#dddddd
 
 " set guifont=Meslo:h14
-set guifont=Ubuntu Mono:h12
+set guifont=Monaco:h12
 set antialias
 set visualbell
 
