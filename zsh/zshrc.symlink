@@ -78,5 +78,7 @@ export PATH="/usr/local/heroku/bin:$HOME/rex/bin/aws-tools/eb/macosx/python2.7:$
 
 #### Android SDK
 export PATH="$PATH:$HOME/sdk/platform-tools:$HOME/sdk/tools"
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-
+#export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
