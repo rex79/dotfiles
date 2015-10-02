@@ -43,7 +43,7 @@ alias tailf='tail -f'
 
 # tmux aliases
 alias tml="tmux list-sessions"
-alias tma="tmux -2 attach -t $1"
+alias tma="tmux attach-session -t $1"
 alias tmk="tmux kill-session -t $1"
 
 # commit alias for deploy with mina
