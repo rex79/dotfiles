@@ -5,8 +5,7 @@ colorscheme base16-tomorrow
 highlight NonText guifg=#dddddd
 highlight SpecialKey guifg=#dddddd
 
-" set guifont=Meslo:h14
-set guifont=Ubuntu\ Mono:h12
+set guifont=Neep\ 10
 set antialias
 set visualbell
 
@@ -16,7 +15,7 @@ set guioptions-=L " remove left scrollbar
 set guioptions-=m " remove menubar
 
 " Fullscreen takes up entire screen
-set fuoptions=maxhorz,maxvert
+" set fuoptions=maxhorz,maxvert
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
@@ -75,4 +74,4 @@ function s:UpdateNERDTree(...)
 endfunction
 
 " Airline theme for macvim
-let g:airline_theme='base16'
+" let g:airline_theme='base16'

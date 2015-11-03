@@ -68,7 +68,7 @@ set t_Co=256
 set background=dark
 set term=screen-256color
 let base16colorspace=256        " Access colors present in 256 colorspace
-colorscheme github
+colorscheme slate
 
 
 " Bubble single lines
@@ -266,10 +266,6 @@ let g:airline_branch_prefix = '⎇  '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_theme='lucius'
 
-if has("gui_running")
-  " set guifont=Ubuntu\ Mono:h10  " Font is Menlo
-  source ~/.mvimrc
-endif
 
 " save with leader+s
 " noremap <Leader>s :update<CR>
@@ -308,4 +304,7 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-
+if has("gui_running")
+  " set guifont=Ubuntu\ Mono:h10  " Font is Menlo
+  source ~/.mvimrc
+endif
